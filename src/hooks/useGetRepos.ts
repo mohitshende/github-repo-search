@@ -20,7 +20,7 @@ export default function useGetRepos() {
     } else {
       try {
         const result = await octokit.request(
-          `GET /search/repositories?q=${searchQuery}`,
+          `GET /search/repositories?q=${encodeURIComponent(searchQuery)}`,
           {
             headers: {
               "X-GitHub-Api-Version": "2022-11-28",
